@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<header>
+	<title>Sign-In Wireframe</title>
+		<hgroup class="">
+			<!--First::: LOGO (left)|| Upload,MyMedia,Following/Followers (center)|| Account (right) -->
+			<div id="logo">Logo</div>
+			<nav align="center">
+				<a href="Upload">UploadMedia</a>
+				<a href="MyMedia">MyMedia</a>
+				<a href="Followers">Followers</a>/
+				<a href="Following">Following</a>
+			<div id="account" align="right">Account</div>
+			</nav>
+		</hgroup><hr>
+		<!-- First ::: Ends here...-->
+		<!--Second ::: Starts here : Profile Pic (On Left) || Welcome Note (Middle >>> Right)-->
+		<hgroup>
+			<div>
+				<img src="Profile.jpg" alt="PROFILE PIC...">
+			</div>
+			<section align="center">
+				<p> @WELCOME</p>
+			</section>
+		</hgroup>
+		<hr>
+		<!-- Second ::: Ends here... -->
+		<!--BODY STARTS HERE (Aside(Account || Login || Register))-->
+		<body>
+			<aside>
+				<section>
+						<div><a href="account">Account</a></div>
+						<div><a href="login">Login</a></div>
+						<div><a href="register">Register</a></div>
+				</section>
+			</aside>
+			<!--Form STARTS here...(SIGN-IN PAGE)-->
+			<section>
+			<form formaction="validate.php" formmethod="post" formenctype="utf-8">
+					<h1>Login</h1>
+					UserName:<input type="text" name="uname"></br></br>
+					Password:<input type="password" name="password"></br></br>
+							 <input type="submit" name="submit"></br></br>
+			</form>
+		</section>
+		</body>
+</header>
+</head>
+<footer>
+	<div>
+		@Copyright
+	</div>
+</footer>
+</html>

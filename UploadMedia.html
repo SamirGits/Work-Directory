@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<header>
+	<title>UploadMedia-Wireframe</title>
+</header>
+	<body>
+		<aside>
+				<section>
+						<div class="col md-5 mb-5" type="">
+							<a href="account">Upload Media</a>
+						</div>
+						<div class="col md-5 mb-5">
+							<a href="login">Single Media</a>
+						</div>
+						<div class="col md-5 mb-5">
+							<a href="register">Multiple Media</a>
+						</div>
+				</section>
+			</aside>
+			<section>
+				<div>
+					<h1>New Media Page</h1>
+				</div>
+				<form action="#" method="POST" enctype="Multiplart/form-data">					
+					<label for="browse"><b>Browse</b></label>
+					    <input type="file" name="browse">
+					 <label for="browse"><b>Upload</b></label>
+					    <input type="file" name="upload"><br>
+					 <label for="title"><b>Title</b></label>
+					    <input type="text" placeholder="Enter the Title" name="title" required><br>
+					 <label for="description"><b>Description</b></label>
+					    <input type="text" placeholder="Description" name="desc" required><br>
+					 <label for="tags"><b>Tags</b></label>
+					    <input type="text" placeholder="Suggested Tags here" name="tag" required><br>
+					 <label for="effects"><b>Effects</b></label>
+					 <span><a type="button">Sepia</a></span>
+					 <span><a type="button">Grey</a></span>
+					 <span><a type="button">Brightness</a></span>
+					 <span><a type="button">Contrast</a></span>	
+					 <!-- In Need with the Java Script Functionality here.....-->
+					<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">Drag and Drop Here
+  					<img src="#" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+					</div>
+				</form>
+			</section>
+	</body>
+	<!--JS and Bootstrap libraries  here -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>

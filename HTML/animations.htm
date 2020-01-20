@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+     /*@keyframes animationName {
+        0% { ... }
+        50% { ... }
+        75% { ..  }
+        100% { ... }
+      }
+div#test {
+  animation-name: animationName;
+  animation-duration: 10s;
+}
+*/
+/*
+@keyframes boxAnimation {
+  0% {  1s 
+  }
+  25% {  2nd second 
+    width: 100%;
+    height: 100px;
+  }
+  75%{  3rd second
+    background-color: #8c1515;
+    width:100%;
+    height: 200px;
+  }
+  100% { 4th second 
+    width: 100%;
+    height: 300px;
+  }
+}*/
+/*
+
+.box {
+  margin: 0 auto;
+
+  width: 150px;
+  height: 150px;
+  border: 1px solid #aaa;
+  background-color: #021545;
+  animation-name: boxAnimation;
+  animation-duration: 4s;
+}*/
+
+
+ @keyframes blinkingAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+/*
+.box {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #aaa;
+  background-color: #8c1515;
+
+  animation-name: blinkingAnimation;
+  animation-duration: infinite;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  
+}
+*/
+
+
+.count-1 {
+  animation-iteration-count: 1;
+}
+
+
+@keyframes blinkingAnimation {
+  0% {
+    margin-left: 20px;
+  }
+  100% {
+    margin-left: calc(100% - 100px) ;
+    margin-right: calc(100%-150px);
+  }
+}
+.box, .box1 {
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #aaa;
+  background-color: #8c1515;
+  animation-name: blinkingAnimation;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+    </style>
+  </head>
+  <body>
+    
+    <div class="box"></div>
+    <div class="box1" align="border"></div>
+    
+  </body>
+</html>

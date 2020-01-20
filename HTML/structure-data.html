@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form for Employee Validations</title>
+</head>
+<body>
+	<form action="validate.php" formenctype="multipart/form-data" formmethod="POST" >
+		<ul>
+			
+			<li>
+				Enter your EMPId <input type="text" name="EMPId" required>
+			</li><br>
+			<li>
+				Enter your Name: <input type="text" name="name" required>
+			</li><br>
+			<li>
+				Enter your Gender: <input type="radio" name="name" value="Male" required><input type="radio" name="name"  value="FeMale" required>
+			</li><br>
+			<li>Select Job-Role
+				<select>
+  							<option value="trainee">Trainee</option> <option value="associate">Associate</option>
+  				</select>
+			</li><br>
+			<li> Skills
+				<select>
+  							<option value="skill1">Programming</option> <option value="skill2">Developer</option> <option value="skill3">Designer</option>
+  							 <option value="skill4">Animation</option>
+  				</select>
+			</li><br>
+			<li>
+				Enter your Job-location: <input type="text" name="j-loc" required>
+			</li><br>
+			<li>
+				Enter your Joining Date: <input type="datetime-local" name="j-date" required>
+			</li><br>
+			<li>
+				Enter your Expected-Salary: <input type="range" name="esal" required>
+			</li><br>
+			<li>
+				Enter your Email: <input type="email" name="email" required>
+			</li><br>
+			<li>
+				Enter your Re-Enter Email: <input type="email" name="remail" required>
+			</li><br>
+			<li>
+				Enter your DOB: <input type="date" name="dob" required>
+			</li><br>
+			<li>Enter your Address: 
+					<textarea rows="03" cols="35" name="address" required > 
+					
+					</textarea>
+			</li><br>
+			<li>
+				Enter your Contact: <input type="tel" name="contact" required=>
+			</li><br>
+			<li>
+				Enter your Feedback <input type="radio" name="feedback" value="1" required><input type="radio" name="feedback" value="2" required><input type="radio" name="feedback" value="3" required><input type="radio" name="feedback" value="4" required><input type="radio" name="feedback" value="5" required>
+			</li><br>
+			<li>
+				<input type="checkbox" name="agree">I, hereby state that the Information given is true and can be recodred and shared by the Organization at any level of their Usage.
+			</li>
+
+		</ul>
+		
+		<input type="submit" name="SUBMIT">
+
+	</form>
+
+</body>
+</html>

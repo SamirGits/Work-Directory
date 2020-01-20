@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		.nav{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<header class="container">
+<hgroup class="row mt-3">
+	<div class="col-3">
+		<button type="button">Logo</button>
+	</div>
+	<div class="col-6">
+			<nav>
+				<ul class="nav nav-tabs nav-justified">
+					<li class="nav-item"
+					\>
+						<a href="#" class="nav-link">Upload-Media</a>
+					</li>
+					<li class="nav-item">
+						<a href="#"class="nav-link">My-Media</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link">Follow/followers</a>
+					</li>
+				</ul>
+	</div>
+	<div class="col-3">
+		<div class="d-flex justify-content-end">
+		<button type="button">Account</button>
+	  </div>
+	</div>
+</hgroup>
+<hgroup class="row mt-3" >
+	<div class="col-3">profile</div>
+	<div class="col-9">@welcome</div>
+
+</hgroup>
+</header>
+<section class="container">
+	<div class="row">
+		<div class="col-3">
+			<div class="row mt-4 justify-content-start">
+				<a href="#"><u>Account</u></a>
+			</div>
+			<div class="row mt-3">
+				<button type="button" class="btn btn-primary w-50">Login</button>
+			</div>
+			<div class="row mt-3">
+				<button type="button" class="btn btn-primary w-50">Register</button>
+			</div>
+		</div>
+		<form action="action.php" method="POST">
+			<div class="form-group">
+				<div class="col-9">
+						<div class="row mt-3" w-50>
+							<label><h1>Registration</h1></label>
+						</div>
+				</div>
+					<div class="row row-tabs mt-3" w-50>
+					<label>UserName:</label>
+						<input type="textbox" name="uname" placeholder="Enter the Username" class="form-control"required>
+					</div>
+					<div class="row row-tabs mt-3" w-50>
+					<label>Password:</label>
+						<input type="password" name="pswd" placeholder="Enter the password" class="form-control" required>
+					</div>
+					<div class="row row-tabs mt-3" w-50>
+					<label>Repeat-Password:</label>
+						<input type="password" name="rpswd" placeholder="Re-Enter the password" class="form-control" required>
+					</div>
+					<div class="row row-tabs mt-3" w-50>
+					<label>E-Mail:</label>
+						<input type="email" name="email" placeholder="Enter the E-Mail" class="form-control" required>
+					</div>
+					<div class="row row-tabs mt-3 ">
+					<button type="submit" class="btn btn-primary mb-2">Submit</button>&nbsp; &nbsp;
+			
+					<div class="row-6 row-tabs ">
+					<button type="reset" class="btn btn-secondary mb-2 ">Reset</button>
+				</div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+	</html>

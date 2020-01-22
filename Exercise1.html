@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise</title>
+</head>
+<body>
+	<label for="text">Value1:</label>
+<input type="text" name="Value1" id="value1"placeholder="enter the 1st value"><br><br>
+<label for="text">Value2:</label>
+<input type="text" name="Value2" id="value2"placeholder="enter the 2nd value">
+<br>
+<br>
+<button type="button" id="addition" onclick="calc()">Addition(+)</button>
+<button type="button" id="substraction" onclick="calc2()">Substraction(-)</button>
+<button type="button" id="multiply" onclick="calc3()">Multiply(*)</button>
+<button type="button" id="Division" onclick="calc4()">Divison(/)</button><br><br>
+<input type="text" id="result" >
+<button type="button" id="reset" onclick="reset()">Reset</button>
+
+<script type="text/javascript">
+	
+
+function calc(){
+	var value1 = Number(document.getElementById('value1').value);
+	
+
+	var value2 = Number(document.getElementById('value2').value);
+	var a=(value1 + value2);
+
+	document.getElementById ('result').value=a;
+	}
+
+
+
+function calc2(){
+	var value1 = Number(document.getElementById('value1').value);
+	
+
+	var value2 = Number(document.getElementById('value2').value);
+	var b=(value1 - value2);
+
+	document.getElementById ('result').value=b;
+	}
+
+
+function calc3(){
+	var value1 = Number(document.getElementById('value1').value);
+	
+
+	var value2 = Number(document.getElementById('value2').value);
+	var c=(value1 * value2);
+
+	document.getElementById ('result').value=c;
+	}
+
+
+function calc4(){
+	var value1 = Number(document.getElementById('value1').value);
+	
+
+	var value2 = Number(document.getElementById('value2').value);
+	var d=(value1 / value2);
+
+	 document.getElementById ('result').value=d;
+	}
+
+
+function reset(){
+	var value1.value = (" ");
+	
+
+	var value2.value = (" ");
+	
+
+	//var result = document.getElementById ('result').value=e;
+	}
+</script>
+
+</body>
+</html>

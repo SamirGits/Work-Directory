@@ -1,0 +1,42 @@
+
+<div>
+    <h3>Add new Media</h3>
+    <div class="row">
+      <div class="col"><label for="">Enter title name</label></div>
+      <div class="col"><input type="text" #txttName /></div>
+    </div>
+    <div class="row">
+      <div class="col"><label for="">Enter Description category</label></div>
+      <div class="col"><input type="text" #txtDescription /></div>
+    </div><div class="row">
+      <div class="col"><label for="">Enter the tags</label></div>
+      <div class="col"><input type="text" #txttags /></div>
+    </div>
+    <div class="row">
+        <div class="col"><label for="">Enter the filename</label></div>
+        <div class="col"><input type="text" #txtfname /></div>
+      </div>
+    <div class="row">
+      
+      <div class="col"><input type="button" value="Save" (click)="saveProduct(txttName, txtDescription, txttags, txtfname)" /></div>
+    </div>
+  <hr/>
+    <table class="table">
+      <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Tags</th>
+        <th>Filename</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Media of Medias; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{Media.title}}</td>
+          <td>{{Media.description}</td>
+          <td>{{Media.tags}}</td>
+          <td>{{Media.filename}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

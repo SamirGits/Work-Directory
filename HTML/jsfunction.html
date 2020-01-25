@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+</head>
+   
+<body>
+<form action="">
+
+<input type="text" id="number1" placeholder="nunmber1"><br><br>
+<input type="text" id="number2" placeholder="nunmber2"><br><br>
+</form>
+<button onclick="function1();">concatenate these 2 values</button><br><br>
+<button onclick="function2();">add these 2 numbers</button>
+<script>
+function function1() {
+    var number1=document.getElementByID("number1").value;
+    var number2=document.getElementByID("number2").value;
+ alert(number1+number2);
+}
+function function2() {
+    var number1=Number(document.getElementByID("number1").value);
+    var number2=Number(document.getElementByID("number2").value);
+ alert(number1+number2);
+}
+</script>
+</body>
+</html>

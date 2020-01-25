@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Exercise</title>
+</head>
+<body>
+<label for="text">Value1:</label>
+<input type="text" name="Val1" id="val1" #value1 placeholder="enter the 1st value"><br><br>
+<label for="text">Value2:</label>
+<input type="text" name="Val2" id="val2" #value1 placeholder="enter the 2nd value">
+<br>
+<br>
+<button type="button" id="addition" (click)="calc(val1,val2,,resultval)">Addition(+)</button>
+<button type="button" id="substraction" (click)="calc2()">Substraction(-)</button>
+<button type="button" id="multiply" (click)="calc3()">Multiply(*)</button>
+<button type="button" id="Division" (click)="calc4()">Divison(/)</button><br><br>
+<label for="res"></label>
+<input type="text" id="res" #resultval/>
+<button type="button" id="reset" #reset >Reset</button>
+</body>
+</html>

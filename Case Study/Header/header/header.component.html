@@ -1,0 +1,23 @@
+<header class="container">
+    <nav class="row mt-3">
+        <div class="col-3">
+            <img src="" alt="logo" width="50px" height="50px"/>
+        </div>
+        <div class="col-6">
+             <ul class="nav nav-tabs nav-justified">
+                 <li class="nav-item">
+                     <a href="#" class="nav-link "[routerLink]="['/upload-media']">Upload-Media</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"class="nav-link "[routerLink]="['/gallery-component']">My-Media</a>
+                 </li>
+                 <li class="nav-item">
+                    <a href="#" class="nav-link" [routerLink]="['/follow']">Follow/followers</a>
+                </li>
+              </ul>
+            </div>
+        <div class="col-3 d-flex justify-content-end">
+            <button type="button"[routerLink]="['/home']">Account</button>
+        </div>
+    </nav>
+</header>

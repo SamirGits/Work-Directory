@@ -21,7 +21,7 @@ import lombok.ToString;
 // to convert into JPA entity
 @Entity // Registers the class as entity
 // Define the mappings
-@Table(name = "student")
+@Table(name = "product")
 public class Product {
 
 	@Id // primary key
@@ -31,17 +31,21 @@ public class Product {
 	@Column(name = "name")
 	private String name;
 	
+	@Column(name = "category")
+	private String category;
+	
 	@Column
-	private String email;
+	private Integer cost;
 	
 	public Product() {}
 
 	
-	public Product(Integer id, String name, String email) {
+	public Product(Integer id, String name, String category,Integer cost) {
 		
 		this.id = id;
 		this.name = name;
-		this.email = email;
+		this.category = category;
+		this.cost=cost;
 	}
 	public Integer getId() {
 		return id;
@@ -55,15 +59,21 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
+	public String getCategory() {
+		return category;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public void setCost(Integer cost) {
+		this.cost = cost;
+	}
+	public Integer getCost() {
+		return cost;
 	}
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", email=" + email + "]";
+		return "Product [id=" + id + ", name=" + name + ", category=" + category + ",+ cost=" + cost +"]";
 	}
 	
 	

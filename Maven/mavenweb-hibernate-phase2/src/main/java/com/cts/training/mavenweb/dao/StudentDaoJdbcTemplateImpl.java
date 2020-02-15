@@ -13,81 +13,80 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.cts.training.mavenweb.entity.Product;
+import com.cts.training.mavenweb.entity.Users;
 
 // @Component
 @Repository
-public class ProductDaoJdbcTemplateImpl implements IProductDao {
+public class StudentDaoJdbcTemplateImpl implements IStudentDao {
 
 	// has the dependency on DataSource
 	// works on raw sql queries (templated)
 	private JdbcTemplate jdbcTemplate;
 	
 	// SQL templates
-	private final String SQL_FETCH_ALL = "select * from product";
-	private final String SQL_FETCH_BY_ID = "select * from product where id=?";
-	private final String SQL_INSERT = "insert into product(name,category,cost) values(?, ?, ?)";
-	private final String SQL_UPDATE = "update product set name=?, category=?,cost=? where id=?";
-	private final String SQL_DELETE = "delete from product where id=?";
+	private final String SQL_FETCH_ALL = "select * from student";
+	private final String SQL_FETCH_BY_ID = "select * from student where id=?";
+	private final String SQL_INSERT = "insert into student(name,email) values(?, ?)";
+	private final String SQL_UPDATE = "update student set name=?, email=? where id=?";
+	private final String SQL_DELETE = "delete from student where id=?";
 	
 	// custom row mapper class
 	// we can define custom logic to map ResultSet data into Student object
-	class StudentRowMapper implements RowMapper<Product>{
+	class StudentRowMapper implements RowMapper<Users>{
 
 		// walk through function, will be called for all records
 		// ResultSet rs : will be an active ResultSet
 		// rowNum : Record number
 		@Override
-		public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
+		public Users mapRow(ResultSet rs, int rowNum) throws SQLException {
 			// TODO Auto-generated method stub
-			Product product = new Product();
+			Users users = new Users();
 			
 			// mapping
-			product.setId(rs.getInt("id"));
-			product.setName(rs.getString("name").toUpperCase());
-			product.setCategory(rs.getString("category"));
-			product.setCost(rs.getInt("cost"));
+			users.setId(rs.getInt("id"));
+			users.setName(rs.getString("name").toUpperCase());
+			users.setEmail(rs.getString("email"));
 			
-			return product;
+			return users;
 		}
 		
 	}
 	
 	@Autowired
-	public ProductDaoJdbcTemplateImpl(DataSource dataSource) {
+	public StudentDaoJdbcTemplateImpl(DataSource dataSource) {
 		// TODO Auto-generated constructor stub
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
 	@Override
-	public List<Product> findAll() {
+	public List<Users> findAll() {
 		// TODO Auto-generated method stub
 		// this.jdbcTemplate.query(<raw query>, <mapper>);
 		// raw query : will be used to retrieve ReusltSet
 		// mapper  : will be used to map it into List<Student>
 		// BeanPropertyRowMapper : converts each record from ResultSet into Student object
 		// and assembles them as a collection
-		List<Product> products = this.jdbcTemplate.query(this.SQL_FETCH_ALL,
+		List<Users> users = this.jdbcTemplate.query(this.SQL_FETCH_ALL,
 														 new StudentRowMapper());				
 														 // new BeanPropertyRowMapper<Student>(Student.class));
 		
-		return products;
+		return users;
 	}
 
 	@Override
-	public Product findById(Integer id) {
+	public Users findById(Integer id) {
 		// TODO Auto-generated method stub
-		Product product =  this.jdbcTemplate.queryForObject(this.SQL_FETCH_BY_ID,
+		Users users =  this.jdbcTemplate.queryForObject(this.SQL_FETCH_BY_ID,
 										 new Object[] {id}, // place holder values
-										 new BeanPropertyRowMapper<Product>(Product.class));
-		System.out.println(product);
-		return product;
+										 new BeanPropertyRowMapper<Users>(Users.class));
+		System.out.println(users);
+		return users;
 	}
 
 	@Override
-	public boolean add(Product product) {
+	public boolean add(Users users) {
 		// TODO Auto-generated method stub
-		int n = this.jdbcTemplate.update(this.SQL_INSERT, new Object[] {product.getName(), product.getCategory(),product.getCost()});
+		int n = this.jdbcTemplate.update(this.SQL_INSERT, new Object[] {users.getName(), users.getEmail()});
 		// n : number of rows affected
 		if(n>0)
 			return true;
@@ -95,9 +94,9 @@ public class ProductDaoJdbcTemplateImpl implements IProductDao {
 	}
 
 	@Override
-	public boolean update(Product product) {
+	public boolean update(Users users) {
 		// TODO Auto-generated method stub
-		int n = this.jdbcTemplate.update(this.SQL_UPDATE, new Object[] {product.getName(), product.getCategory(), product.getCost()});
+		int n = this.jdbcTemplate.update(this.SQL_UPDATE, new Object[] {users.getName(), users.getEmail(), users.getId()});
 		// n : number of rows affected
 		if(n>0)
 			return true;

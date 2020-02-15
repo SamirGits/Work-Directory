@@ -10,98 +10,98 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cts.training.mavenweb.dao.IProductDao;
-import com.cts.training.mavenweb.entity.Product;
-import com.cts.training.mavenweb.services.IProductService;
+import com.cts.training.mavenweb.dao.IStudentDao;
+import com.cts.training.mavenweb.entity.Users;
+import com.cts.training.mavenweb.services.IStudentService;
 
 @Controller
-@RequestMapping("/product")
-public class ProductController {
+@RequestMapping("/student")
+public class StudentController {
 
 	// dependency
 	/*@Autowired
 	private IStudentDao studentDao;*/
 	
 	@Autowired
-	private IProductService productService;
+	private IStudentService studentService;
 	
 	@RequestMapping("/all")
 	public String showAll(Model model) {
 		// get data from DAO layer
 		// List<Student> students = this.studentDao.findAll();
-		List<Product> products = this.productService.findAllProducts();
+		List<Users> users = this.studentService.findAllStudents();
 		
 		// add to model object
-		model.addAttribute("products", products);
+		model.addAttribute("students", users);
 		
 		// return the view page
-		return "product-list";
+		return "student-list";
 	}
 	
 	@RequestMapping("/entry")
 	public String entry(Model model) {
 		
-		Product product = new Product(); // empty bag
+		Users users = new Users(); // empty bag
 		
 		// add empty bag to model , to be mapped with spring form
-		model.addAttribute("product", product);
+		model.addAttribute("student", users);
 		
-		return "product-entry";
+		return "student-entry";
 	}
 	
 	@RequestMapping("/save")  // ALL TYPES OF HTTP VERB
-	public String save(@ModelAttribute Product product) {
+	public String save(@ModelAttribute Users users) {
 		// add validation
 		
 		// send student object to DAO via SERVICE
-		this.productService.addProduct(product);
+		this.studentService.addStudent(users);
 		
 		// terminate the original request and start a new one
 		
 		// redirect to /all
 		// return a redirect url
-		return "redirect:/product/all";
+		return "redirect:/student/all";
 	}
 	
 	@RequestMapping("/update")
 	public String update(@RequestParam Integer id, Model model) {
 		
 		// send id to DAO via SERVICE and get the student object to edit
-		Product product = this.productService.findProductById(id);
+		Users users = this.studentService.findStudentById(id);
 		
 		// add student to model , to be mapped with spring form
-		model.addAttribute("product", product);
+		model.addAttribute("student", users);
 		
-		return "product-update";
+		return "student-update";
 	}
 	
 	
 	// Path Variable
-		@RequestMapping("/delete/{productId}")
-		public String delete(@PathVariable Integer productId) {
+		@RequestMapping("/delete/{studentId}")
+		public String delete(@PathVariable Integer studentId) {
 			// send studentId to DAO via SERVICE
-			this.productService.deleteProduct(productId);
+			this.studentService.deleteStudent(studentId);
 			
 			// terminate the original request and start a new one
 			
 			// redirect to /all
 			// return a redirect url
-			return "redirect:/product/all";
+			return "redirect:/student/all";
 		}
 	
 	@RequestMapping("/save-update")
-	public String saveUpdate(@ModelAttribute Product product) {
+	public String saveUpdate(@ModelAttribute Users users) {
 		// add validation
 		
 		// send student object to DAO via SERVICE
-		System.out.println(product.getName() + " : " + product.getId());
-		this.productService.updateProduct(product);
+		System.out.println(users.getName() + " : " + users.getId());
+		this.studentService.updateStudent(users);
 		
 		// terminate the original request and start a new one
 		
 		// redirect to /all
 		// return a redirect url
-		return "redirect:/product/all";
+		return "redirect:/student/all";
 	}
 	
 	
